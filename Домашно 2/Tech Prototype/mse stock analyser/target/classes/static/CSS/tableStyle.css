@@ -1,0 +1,86 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.title-button {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    justify-content: center;
+}
+
+.title-button:hover {
+    background-color: #555;
+}
+
+.table-section {
+    margin-bottom: 30px;
+}
+
+.back-button {
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.table-placeholder {
+    width: 100%;
+    background-color: #ddd;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.table-placeholder img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.graph-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.graph {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.graph img {
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    background-color: #eee;
+}

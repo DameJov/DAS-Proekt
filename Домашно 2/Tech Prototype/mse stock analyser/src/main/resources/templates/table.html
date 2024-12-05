@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+    <link rel="stylesheet" th:href="@{/CSS/tableStyle.css}">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <div class="logo">
+            <img th:src="@{/img/Stock.png}" alt="Logo">
+        </div>
+        <form action="/codes" method="post">
+            <button class="title-button">Назад</button>
+        </form>
+    </header>
+
+    <main>
+        <section class="table-section">
+            <div class="table-placeholder">
+                <img th:src="@{/img/image 1.png}" alt="Table placeholder">
+            </div>
+        </section>
+
+        <section class="graph-section">
+            <div class="graph">
+                <img th:src="@{/img/image 2.png}" alt="Price chart">
+            </div>
+            <div class="graph">
+                <img th:src="@{/img/image 3.png}" alt="Volume chart">
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

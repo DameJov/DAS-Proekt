@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Најава</title>
+  <link rel="stylesheet" th:href="@{/CSS/loginStyle.css}">
+</head>
+<body>
+<div class="container">
+  <div class="logo">
+    <img th:src="@{/img/Stock.png}" alt="Logo">
+  </div>
+  <div class="login-form">
+    <h1>Најава</h1>
+    <form method="post" action="/login">
+      <label for="username">Корисничко Име</label>
+      <input type="text" id="username" name="username" placeholder="">
+
+      <label for="password">Лозинка</label>
+      <input type="password" id="password" name="password" placeholder="">
+
+      <div class="links">
+        <a href="#register">Регистрација</a><br>
+        <a href="#forgot-password">Си ја заборави лозинката?</a>
+      </div>
+
+      <button type="submit">Најава</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
