@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Техничка анализа на акции</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 50%; margin: auto; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid black; }
+        .buy { background-color: green; color: white; }
+        .sell { background-color: red; color: white; }
+        .hold { background-color: gray; color: white; }
+    </style>
+</head>
+<body>
+
+<h1>Техничка анализа на акции</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Акција</th>
+        <th>Сигнал</th>
+        <th>Акција</th>
+    </tr>
+    </thead>
+    <tbody id="stockTable">
+    <!-- Тука динамички ќе се додаваат акции -->
+    </tbody>
+</table>
+
+<script>
+    // Листа на акции
+    const stocks = ["ADIN", "ALK", "ALKB", "AMEH", "APTK", "ATPP", "AUMK", "BANA", "BGOR"];
+
+    function fetchStockSignals() {
+        const tableBody = document.getElementById("stockTable");
+        tableBody.innerHTML = "";
+
+        stocks.forEach(stock => {
+            fetch(`http://localhost:8080/api/technical-analysis/${stock}`)
+                .then(response => response.json())
+                .then(data => {
+                    const row = document.createElement("tr");
+
+                    const stockCell = document.createElement("td");
+                    stockCell.textContent = data.stock;
+                    row.appendChild(stockCell);
+
+                    const signalCell = document.createElement("td");
+                    signalCell.textContent = data.signal;
+                    signalCell.className = data.signal.toLowerCase();
+                    row.appendChild(signalCell);
+
+                    const buttonCell = document.createElement("td");
+                    const button = document.createElement("button");
+                    button.textContent = data.signal;
+                    button.className = data.signal.toLowerCase();
+                    buttonCell.appendChild(button);
+                    row.appendChild(buttonCell);
+
+                    tableBody.appendChild(row);
+                })
+                .catch(error => console.error("Грешка при вчитување:", error));
+        });
+    }
+
+    fetchStockSignals(); // Вчитување на податоците при старт
+</script>
+
+</body>
+</html>
