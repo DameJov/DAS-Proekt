@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кодови</title>
+    <link rel="stylesheet" th:href="@{/CSS/codesStyle.css}">
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <img th:src="@{/img/Stock.png}" alt="Logo">
+    </div>
+    <div class="code-list">
+        <div class="code" th:each="code : ${stockCodes}">
+            <form th:action="@{'/codes/{code}' (code=${code})}" th:method="GET">
+                <button type="submit" th:text="${code}"></button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
